@@ -1,0 +1,1 @@
+/Users/andre/Documents/04_Projects.nosync/ai-growth-assistant/.claude/skills/gstack/investigate/SKILL.md
