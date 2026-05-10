@@ -328,7 +328,10 @@ def build_epub(md_path: Path, out_path: Path) -> Path:
 
     book.toc = tuple(items)
     book.add_item(epub.EpubNcx())
-    book.spine = list(items)
+    book.add_item(epub.EpubNav())
+    # nav lives in the manifest (properties="nav") for EPUB3, but stays out of
+    # the linear reading flow so it doesn't appear as a "page" between chapters.
+    book.spine = [("nav", "no"), *items]
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
     epub.write_epub(str(out_path), book)
