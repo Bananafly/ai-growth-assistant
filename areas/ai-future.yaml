@@ -1,0 +1,78 @@
+# Area: going deeper on AI as a practitioner.
+# Authored 2026-05-09 with help from /office-hours + iteration.
+
+goal: |
+  Move from competent AI practitioner with surface-level API knowledge to
+  credible technical practitioner who understands the layer below — what KV
+  cache actually does, how modern retrieval works (BM25, reranking, hybrid),
+  what frameworks like Graphiti do under the hood, what current research
+  papers are claiming. Read AI papers and HN posts critically, form opinions
+  that hold up, and make sharper architectural decisions on production agent
+  work. Already shipping AI in production; not aiming to do research.
+
+current_level: |
+  Software developer at AWS, on the team bringing agents to CodePipeline.
+  Comfortable as an AI practitioner: ship AI in production, "ok/good" at
+  using agents and LLM APIs, know the major frameworks at a working level.
+  Spots of real depth — wrote a blog post on prompt caching internals — and
+  adjacent spots that are surface-only (KV cache mechanics, what fine-tuning
+  actually does to weights). Read articles on eval setup. Used Graphiti for
+  GraphRAG with great results but no idea what it did under the hood. Modern
+  retrieval techniques are gaps: BM25, reranking, dense vs sparse, hybrid
+  retrieval. When I go deeper on something (prompt caching → KV cache rabbit
+  hole), it's satisfying — want to make that systematic.
+
+# Ordered. growth-week picks the next one not used recently. Week 1 = #1.
+focus_areas:
+  - modern-retrieval-and-rag       # BM25, reranking, sparse vs dense, hybrid, GraphRAG internals, RAG evals
+  - llm-internals                  # KV cache, attention mechanics, embeddings, tokenization, training, scaling laws
+  - agents-in-production           # agent design patterns, failure modes, eval frameworks, real-deployment reports
+  - frontier-research              # interpretability, alignment, capability papers, scaling research
+  - where-its-going                # forward essays, predictions, AI economy, future of practitioners
+
+constraints:
+  week_length_minutes: 120         # ~26k words at 220 wpm (~17 min/day across 7 days).
+  device: kobo-clara-hd
+  style: terse                     # framing paragraphs are tight, not chatty
+
+  # WHAT KIND of source — research papers vs practitioner posts vs synthesis essays.
+  source_type_mix:
+    primary_research: 0.3
+    practitioner: 0.5
+    synthesis: 0.2
+
+  # WHEN the content is oriented — given active-practitioner level, catch-up
+  # bucket is smaller than for a beginner; no need for "what is a transformer."
+  time_horizon_mix:
+    catch_up: 0.4                  # things I should know but don't (KV cache, BM25, framework internals)
+    current: 0.4                   # what's being shipped/researched/discussed now
+    forward: 0.2                   # where it's going
+
+# 5–10 trusted domains the assistant checks FIRST every week before falling
+# back to web search. Filled in collaboratively — see chat history.
+seed_sources:
+  - lilianweng.github.io           # Lilian Weng — rigorous LLM systems posts (llm-internals)
+  - eugeneyan.com                  # Eugene Yan — ML practitioner essays (retrieval, evals, agents)
+  - simonwillison.net              # Simon Willison — daily AI tooling + experiments (current)
+  - www.anthropic.com/research     # Anthropic research index (frontier)
+  - openai.com/research            # OpenAI research index (frontier)
+  - magazine.sebastianraschka.com  # Sebastian Raschka — LLM internals + paper walkthroughs
+  - jxnl.co                        # Jason Liu — RAG patterns, instructor, evals
+  - hamel.dev                      # Hamel Husain — evals + RAG + LLM eng practitioner
+  - transformer-circuits.pub       # Anthropic interpretability deep-dives
+  - karpathy.github.io             # Andrej Karpathy — first-principles LLM internals
+
+exclude_domains:
+  - medium.com                     # signal-to-noise too low
+  - substack.com                   # too broad; add specific substacks individually if needed
+  - news.ycombinator.com           # discussion, not a primary source
+
+notes: |
+  Calibration mode is ON: every week's growth-week run probes current
+  knowledge of the focus topic before sourcing, and pitches one notch above
+  current confidence (Vygotsky's zone of proximal development). See
+  feedback memory "one_step_further" for the durable preference.
+
+  When I go deeper on a topic and find a satisfying rabbit hole (like prompt
+  caching → KV cache), I want the assistant to remember and offer a follow-up
+  week on the adjacent thing. Add to state/ai-future.yaml as I discover these.
