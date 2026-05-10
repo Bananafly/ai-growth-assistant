@@ -1,0 +1,32 @@
+# Running record for ai-future. Append-only. Newest entries at the top.
+
+entries:
+  - date: 2026-05-09
+    week: 2026-W19
+    focus: modern-retrieval-and-rag
+    kind: calibration_probe
+    questions:
+      - q: "What does BM25 actually compute (TF, IDF, length normalization, k1/b)?"
+        a: "1 — heard the name, couldn't define it"
+      - q: "Dense vs sparse retrieval and what reranking does in a pipeline?"
+        a: "1 — fuzzy on the distinction"
+      - q: "What does Graphiti / GraphRAG do under the hood (entity extraction, graph build, query traversal)?"
+        a: "3 — entities + relations, query traverses graph"
+    notes: |
+      Confidence floor on retrieval mechanics; mid-level on graph approaches.
+      Pitched the week one notch above 1: practitioner explanations that teach
+      mechanism, no papers, no advanced reranker mechanics. GraphRAG saved for
+      a future week (already at 3 — would be a one-notch jump from a different
+      starting point).
+    sources_picked:
+      - eugeneyan.com — Search: Query Matching via Lexical, Graph, and Embedding Methods (2021)
+      - jxnl.co — RAG is More Than Just Embedding Search (Sep 2023)
+      - eugeneyan.com — Obsidian-Copilot (2023)
+      - jxnl.co — Why Grep Beat Embeddings in Our SWE-Bench Agent (Sep 2025)
+      - jxnl.co — Systematically Improving Your RAG (May 2024)
+    word_count: 13018
+    notes_on_length: |
+      Came in at ~13k vs 21k target. At confidence 1 with new conceptual
+      material, real reading speed is closer to 130 wpm than 220 — that puts
+      this at ~100 min, within 20% of the 120 min target. If user signals
+      "too short" in EOW review, future weeks pack more.
